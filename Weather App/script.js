@@ -1,5 +1,5 @@
 const api = {
-    key: "fcc8de7015bbb202209bbf0261babf4c",
+    key: "196389e58d7fb2c021f101784a90987e",
     base: "https://api.openweathermap.org/data/2.5/"
 }
 
@@ -12,14 +12,16 @@ function setQuery(evt) {
     }
 }
 
-function getResults (query) {
+function getResults(query) {
+    showLoadingSpinner();
     fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
         .then(weather => {
             return weather.json();
-        }).then(displayResults);
+        }).then(displayResults)
+        .finally(hideLoadingSpinner);
 }
 
-function displayResults (weather) {
+function displayResults(weather) {
     let city = document.querySelector('.location .city');
     city.innerText = `${weather.name}, ${weather.sys.country}`;
 
@@ -35,9 +37,12 @@ function displayResults (weather) {
 
     let hilow = document.querySelector('.hi-low');
     hilow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(weather.main.temp_max)}°c`;
+
+    let icon = document.querySelector('.current .icon');
+    icon.innerHTML = `<img src="https://openweathermap.org/img/wn/${weather.weather[0].icon}@4x.png" alt="${weather.weather[0].description}" />`;
 }
 
-function dateBuilder (d) {
+function dateBuilder(d) {
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
@@ -47,4 +52,12 @@ function dateBuilder (d) {
     let year = d.getFullYear();
 
     return `${day} ${date} ${month} ${year}`;
+}
+
+function showLoadingSpinner() {
+    document.getElementById('loading-spinner').style.display = 'block';
+}
+
+function hideLoadingSpinner() {
+    document.getElementById('loading-spinner').style.display = 'none';
 }
