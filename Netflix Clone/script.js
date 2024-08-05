@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const API_KEY = 'f09162d3fd5a842c3988921f62e9f8b0';
+    const API_KEY = 'YOUR_API_KEY';
     const API_URL = `https://api.themoviedb.org/3`;
     const TRENDING_URL = `${API_URL}/trending/all/week?api_key=${API_KEY}`;
     const TOP_RATED_URL = `${API_URL}/movie/top_rated?api_key=${API_KEY}`;
