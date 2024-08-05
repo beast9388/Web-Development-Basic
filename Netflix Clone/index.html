@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">
+            <a href="#">Netflix</a>
+        </div>
+        <ul>
+            <li><a href="#" class="nav-link">Home</a></li>
+            <li><a href="#" class="nav-link">TV Shows</a></li>
+            <li><a href="#" class="nav-link">Movies</a></li>
+            <li><a href="#" class="nav-link">My List</a></li>
+        </ul>
+        <div class="search">
+            <input type="text" placeholder="Search..." id="search-input">
+            <button id="search-button"><i class="fas fa-search"></i></button>
+        </div>
+    </nav>
+</header>
+<main>
+    <div class="banner" id="banner">
+        <!-- Banner content will be populated by JavaScript -->
+    </div>
+    <section class="movies-section">
+        <h2>Trending Now</h2>
+        <div class="movies-container" id="trending-container">
+            <!-- Trending movies will be populated by JavaScript -->
+        </div>
+    </section>
+    <section class="movies-section">
+        <h2>Top Rated</h2>
+        <div class="movies-container" id="top-rated-container">
+            <!-- Top-rated movies will be populated by JavaScript -->
+        </div>
+    </section>
+    <section class="movies-section">
+        <h2>Action Movies</h2>
+        <div class="movies-container" id="action-container">
+            <!-- Action movies will be populated by JavaScript -->
+        </div>
+    </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
