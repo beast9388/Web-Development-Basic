@@ -1,0 +1,274 @@
+/* Reset and basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Fira Code", monospace;
+    line-height: 1.6;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light grey text */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    animation: fadeIn 2s ease-in-out; /* Animation */
+}
+
+header {
+    background-color: #1f1f1f; /* Darker header */
+    color: #00bcd4; /* Light blue text */
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideInDown 1s ease-in-out; /* Animation */
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 1rem;
+    animation: fadeInLeft 1s ease-in-out; /* Animation */
+}
+
+nav ul li a {
+    color: #00bcd4; /* Light blue links */
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for color */
+    animation: fadeInRight 1s ease-in-out; /* Animation */
+}
+
+nav ul li a:hover {
+    background-color: #333; /* Darker hover effect */
+    color: #fff; /* White text on hover */
+    animation: pulse 1s infinite; /* Animation */
+}
+
+.contact-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    animation: fadeInUp 1s ease-in-out; /* Animation */
+}
+
+.contact {
+    max-width: 800px;
+    margin: 2rem;
+    padding: 2rem;
+    background-color: #222; /* Darker background for contact section */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Slight shadow for depth */
+    text-align: center; /* Center-align the content */
+    animation: bounceIn 1s ease-in-out; /* Animation */
+}
+
+.contact h2 {
+    color: #00bcd4; /* Light blue heading */
+    text-align: center;
+    margin-bottom: 1rem;
+    animation: flipInX 1s ease-in-out; /* Animation */
+}
+
+.contact p {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #b0b0b0; /* Medium grey text */
+    animation: fadeIn 1s ease-in-out; /* Animation */
+}
+
+form .form-group {
+    margin-bottom: 1.5rem;
+    text-align: left; /* Align the labels to the left */
+    animation: fadeInUp 1s ease-in-out; /* Animation */
+}
+
+form .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #e0e0e0; /* Light grey text */
+    animation: fadeInLeft 1s ease-in-out; /* Animation */
+}
+
+form .form-group input,
+form .form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #333; /* Darker input background */
+    border: 1px solid #444; /* Border for input fields */
+    color: #e0e0e0; /* Light grey text */
+    border-radius: 4px;
+    animation: zoomIn 1s ease-in-out; /* Animation */
+}
+
+form .form-group input:focus,
+form .form-group textarea:focus {
+    outline: none;
+    border-color: #00bcd4; /* Light blue border on focus */
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #00bcd4; /* Light blue button */
+    color: #fff; /* White text */
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease; /* Add transition for background color */
+    animation: flash 2s; /* Animation */
+}
+
+.submit-button:hover {
+    background-color: #0097a7; /* Darker blue on hover */
+}
+
+footer {
+    background-color: #1f1f1f; /* Darker footer */
+    color: #e0e0e0; /* Light grey text */
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto; /* Ensure footer is at the bottom */
+    animation: fadeInUp 1s ease-in-out; /* Animation */
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    from, 20%, 40%, 60%, 80%, to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+    from {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+    20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+    40% {
+        transform: scale3d(.9, .9, .9);
+    }
+    60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+    80% {
+        transform: scale3d(.97, .97, .97);
+    }
+    to {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes flipInX {
+    from {
+        transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+    40% {
+        transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+        animation-timing-function: ease-in;
+    }
+    60% {
+        transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+        opacity: 1;
+    }
+    80% {
+        transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    }
+    to {
+        transform: perspective(400px);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes flash {
+    from, 50%, to {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
