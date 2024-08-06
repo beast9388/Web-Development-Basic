@@ -33,4 +33,4 @@ Special thanks to Bharat Intern for providing the project guidelines and tutoria
 
 ---
 
-This internship was part of the Bharat Intern Virtual Internship Upskilling Campaign @@@.
+This internship was part of the Bharat Intern Virtual Internship Upskilling Campaign.
